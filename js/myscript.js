@@ -17,25 +17,34 @@ console.log("prezzo intero: " +  prezzo_intero);
 //DICHIARIAZIONE VARIABILE PER LO SCONTO
 let scontoDaApplicare;
 
-//SCONTO MINORENNI
-if(anni_utente < 18 ) {
-    
-    scontoDaApplicare = 0.20; 
-    console.log("sconto del 20%: "  + scontoDaApplicare);
-    
-} 
-//SCONTO OVER 65
-else if(anni_utente >= 65) {
-    
-    scontoDaApplicare = 0.40;
-    console.log("sconto del 40%: "  + scontoDaApplicare);
-    
-} 
-//SCONTO A 0
-else {//if(anni_utente >=18 || anni_utente <= 65) {
-    
-    scontoDaApplicare = 0;
-    console.log("sconto 0%: " + scontoDaApplicare);
+
+if (isNaN(km_utente) || isNaN(anni_utente) || km_utente === 0 || anni_utente === 0) {
+    alert("Non hai inserito valori validi")
+
+}
+else{
+
+    //SCONTO MINORENNI
+    if(anni_utente < 18 ) {
+        
+        scontoDaApplicare = 0.20; 
+        console.log("sconto del 20%: "  + scontoDaApplicare);
+        
+    } 
+    //SCONTO OVER 65
+    else if(anni_utente >= 65) {
+        
+        scontoDaApplicare = 0.40;
+        console.log("sconto del 40%: "  + scontoDaApplicare);
+        
+    } 
+    //SCONTO A 0
+    else {//if(anni_utente >=18 || anni_utente <= 65) {
+        
+        scontoDaApplicare = 0;
+        console.log("sconto 0%: " + scontoDaApplicare);
+    }
+
 }
 
 //CALCOLO DELLO SCONTO SUL PREZZO INTERO
